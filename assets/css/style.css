@@ -1,0 +1,153 @@
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ font-family:system-ui;
+}
+
+body{
+ min-height:100vh;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ background:linear-gradient(120deg,#020617,#022c22,#020617);
+ color:#fff;
+ overflow:hidden;
+}
+
+/* background canvas */
+#bg{
+ position:fixed;
+ inset:0;
+ z-index:-1;
+}
+
+/* glass card */
+.card{
+ width:370px;
+ padding:22px;
+ border-radius:18px;
+ background:rgba(2,6,23,.65);
+ backdrop-filter:blur(12px);
+ box-shadow:0 0 45px #22c55e40;
+ animation:slide .6s ease;
+}
+
+@keyframes slide{
+ from{transform:translateY(30px);opacity:0}
+ to{transform:none;opacity:1}
+}
+
+h2{
+ text-align:center;
+ margin-bottom:10px;
+}
+
+input,button{
+ width:100%;
+ padding:12px;
+ margin-top:12px;
+ border:none;
+ border-radius:12px;
+ outline:none;
+}
+
+input{
+ background:#020617;
+ color:#fff;
+}
+
+button{
+ background:#22c55e;
+ color:#000;
+ font-weight:700;
+ cursor:pointer;
+ transition:.3s;
+}
+button:hover{
+ transform:scale(1.05);
+ box-shadow:0 0 20px #22c55e;
+}
+
+/* status */
+#status{
+ text-align:center;
+ margin-top:12px;
+}
+
+/* progress bar */
+.progress{
+ height:6px;
+ background:#020617;
+ border-radius:10px;
+ overflow:hidden;
+ margin-top:10px;
+}
+.progress span{
+ display:block;
+ height:100%;
+ width:0%;
+ background:#22c55e;
+ animation:load 2.5s forwards;
+}
+@keyframes load{
+ to{width:100%}
+}
+
+/* success check */
+.check{
+ width:42px;
+ height:42px;
+ border-radius:50%;
+ border:3px solid #22c55e;
+ margin:10px auto;
+ position:relative;
+ animation:pulse 1s infinite;
+}
+@keyframes pulse{
+ 50%{box-shadow:0 0 15px #22c55e}
+}
+.check::after{
+ content:'';
+ position:absolute;
+ width:10px;
+ height:20px;
+ border-right:3px solid #22c55e;
+ border-bottom:3px solid #22c55e;
+ transform:rotate(45deg);
+ left:14px;
+ top:6px;
+}
+
+/* features section */
+.features{
+ margin-top:14px;
+ padding:12px;
+ background:#020617aa;
+ border-radius:12px;
+ font-size:13px;
+}
+.features h4{
+ margin-bottom:6px;
+ text-align:center;
+}
+.features ul{
+ list-style:none;
+}
+.features li{
+ margin:4px 0;
+ opacity:.85;
+}
+
+/* footer */
+small{
+ display:block;
+ text-align:center;
+ opacity:.7;
+ margin-top:14px;
+}
+
+a{
+ color:#22c55e;
+ text-decoration:none;
+}
